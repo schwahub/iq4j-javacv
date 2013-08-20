@@ -1,4 +1,4 @@
-iq4j-javavcv
+iq4j-javacv
 ============
 
 Computer Vision Library with javacv
