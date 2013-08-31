@@ -2,12 +2,11 @@ package com.iq4j.javacv.imgproc;
 
 public class CannySettings extends Settings {
 
-	private volatile double thresh1 = 50; // =0~255
+	private volatile double thresh1 = 100; // =0~255
 	private volatile double thresh2 = 100; // =0~255
 	private volatile int aperture_size = 3; // =3
 
 	public CannySettings() {
-		//this(true, 50.0, 100.0, Integer.valueOf(3));
 	}
 
 	/**
@@ -24,10 +23,10 @@ public class CannySettings extends Settings {
 	}
 
 	public CannySettings(CannySettings source) {
-		this.aperture_size = Integer.valueOf(source.aperture_size);
-		this.thresh1 = Double.valueOf(source.thresh1);
-		this.thresh2 = Double.valueOf(source.thresh2);
-		this.setActive(Boolean.valueOf(source.isActive()));
+		this.aperture_size = source.aperture_size;
+		this.thresh1 = source.thresh1;
+		this.thresh2 = source.thresh2;
+		this.setActive(source.isActive());
 	}
 	
 	/* (non-Javadoc)

@@ -4,9 +4,9 @@ import com.googlecode.javacv.cpp.opencv_core.CvSize;
 
 public class GaussianBlurSettings  extends Settings {
 
-	private int ksizeX = 1; //=0,1,3,5,7,9,11
-	private int ksizeY = 1; //=0,1,3,5,7,9,11
-	private double sigmaX = 0; 
+	private int ksizeX = 5; //=0,1,3,5,7,9,11
+	private int ksizeY = 5; //=0,1,3,5,7,9,11
+	private double sigmaX = 5; 
 	private double sigmaY = 0; // =0
 	private int borderType = 4; // =0,1,2,3,4,5,16
 

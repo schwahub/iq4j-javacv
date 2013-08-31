@@ -2,8 +2,8 @@ package com.iq4j.javacv.imgproc;
 
 public class FindContoursSettings extends Settings {
 
-	private int mode = 3; // =0,1,2,3,4,5
-	private int method = 1; // =0,1,2,3,4,5
+	private int mode = 1; // =0,1,2,3,4,5
+	private int method = 2; // =0,1,2,3,4,5
 	
 	public FindContoursSettings() {
 	}

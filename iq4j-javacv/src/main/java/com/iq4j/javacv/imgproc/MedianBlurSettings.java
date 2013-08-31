@@ -2,7 +2,7 @@ package com.iq4j.javacv.imgproc;
 
 public class MedianBlurSettings extends Settings {
 
-	private int kSize = 3; // more than 1 and odd  = 3,5,7,9,11,13,15,17,19 
+	private int kSize = 9; // more than 1 and odd  = 3,5,7,9,11,13,15,17,19 
 
 	public MedianBlurSettings() {
 	}

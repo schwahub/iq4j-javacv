@@ -14,12 +14,6 @@ import com.googlecode.javacv.cpp.opencv_core.IplImage;
 @SuppressWarnings("unused")
 public class ImgProc {
 
-	// -- Canny Settings
-	public static volatile boolean cs_active = true;//=true
-	public static volatile double cs_thresh1 = 50; //=50 [0,255]
-	public static volatile double cs_thresh2 = 100;//=100 [0,255]
-	public static volatile int cs_aperture_size = 3; //=3 
-	
 	private static volatile GaussianBlurSettings _gbs = new GaussianBlurSettings(); 
 	private static volatile MedianBlurSettings _mbs = new MedianBlurSettings();
 	private static volatile CannySettings _cs = new CannySettings(true, 50.0, 50.0, 3);
@@ -77,14 +71,14 @@ public class ImgProc {
 	}
 	
 	public static synchronized void prCanny(IplImage src, IplImage dst) {
-		if(cs_active) {
-			cvCanny(src, dst, cs_thresh1, cs_thresh2, cs_aperture_size);
+		if(_cs.isActive()) {
+			cvCanny(src, dst, _cs.getThresh1(), _cs.getThresh2(), _cs.getAperture_size());
 		}		
 	}
 	
 	public static synchronized void prFindContours(IplImage src, CvMemStorage storage, CvSeq contours) {
 		if(_fcs.isActive()){
-			cvFindContours(src, storage, contours, sizeof(CvContour.class), _fcs.getMode(), _fcs.getMethod());
+			cvFindContours(src, storage, contours, sizeof(CvContour.class),  _fcs.getMode(), _fcs.getMethod());
 		}
 	}
 	
